@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de Bases</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .output { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Conversor de Bases Numéricas</h2>
+        
+        <div>
+            <input type="number" id="decimalInput" placeholder="Número decimal">
+            <button onclick="convert(2)">A Binario</button>
+            <button onclick="convert(8)">A Octal</button>
+            <button onclick="convert(16)">A Hexadecimal</button>
+        </div>
+        
+        <div class="output">
+            <p id="result"></p>
+            <p id="stackState"></p>
+        </div>
+    </div>
+
+    <script src="./hola.js"></script>
+</body>
+</html>
