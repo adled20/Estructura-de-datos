@@ -4,7 +4,7 @@ class Node {
         this.value = value; //Almacena el valor
         this.next = null; //Referencia al siguiente nodo que se creara
     }
-    //Al utilizarce ejemplo: Node(3) = 3 y next sera null
+   
 }
 
 //Pila
@@ -24,6 +24,13 @@ class Stack {
         const value = this.top.value; 
         this.top = this.top.next; //Convierte al siguiente nodo el top
         return value;
+    }
+
+     clear() { // <- Aquí se usa pop()
+        while (!this.isEmpty()) {
+            this.pop(); // Llama a pop() hasta vaciar la pila
+        }
+        console.log("Pila vaciada correctamente.");
     }
 //Verificacion de pila
     isEmpty() {
@@ -58,12 +65,12 @@ function convertDecimal(decimalNumber, base) {
     return stack; //Retornamos con la pila 
 }
  //Para hexadecimal
-function getDigit(value, base) {
+function getDigit(value, base) { 
     if (base === 16 && value >= 10) {
         // Convierte números 10-15 a letras A-F
         return String.fromCharCode(65 + (value - 10));
     }
-    return value.toString(); // Para bases 2 y 8, devuelve el número como string
+    return value.toString(); 
 }
 
 function convert(base) {
@@ -93,4 +100,8 @@ function convert(base) {
     
     // Mostrar resultado
     resultElement.innerHTML = `Base ${base}: ${elements.map(e => getDigit(e, base)).join('')}`;
+
+      if (!stack.isEmpty()) {
+        stack.clear(); // <- Esto ejecuta pop() internamente
+    }
 }
